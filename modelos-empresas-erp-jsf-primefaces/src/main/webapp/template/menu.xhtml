@@ -1,0 +1,47 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:form>
+
+    <p:menubar>
+
+        <p:menuitem value="Dashboard"
+                    icon="pi pi-home"
+                    outcome="/pages/dashboard.xhtml"/>
+
+        <p:submenu label="Cadastros" icon="pi pi-database">
+
+            <p:menuitem value="Clientes"
+                        icon="pi pi-users"
+                        outcome="/pages/clientes.xhtml"/>
+
+            <p:menuitem value="Produtos"
+                        icon="pi pi-box"
+                        outcome="/pages/produtos.xhtml"/>
+
+        </p:submenu>
+
+        <p:submenu label="RH" icon="pi pi-id-card">
+
+            <p:menuitem value="Funcionários"
+                        icon="pi pi-user"
+                        outcome="/pages/funcionarios.xhtml"/>
+
+        </p:submenu>
+
+        <p:submenu label="Financeiro" icon="pi pi-wallet">
+
+            <p:menuitem value="Contas a Pagar"
+                        icon="pi pi-money-bill"
+                        outcome="/pages/contasPagar.xhtml"/>
+
+        </p:submenu>
+
+    </p:menubar>
+
+</h:form>
+
+</ui:composition>
