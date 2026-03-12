@@ -12,6 +12,7 @@
 
 	<dependencies>
 
+
 		<!--
 		https://mvnrepository.com/artifact/org.jboss.weld.servlet/weld-servlet-core -->
 		<!-- Weld é uma implementação de CDI (Contexts and Dependency
