@@ -3,6 +3,7 @@ package com.medeirossoftware.erp.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,14 +14,13 @@ import javax.persistence.Table;
 @Table(name = "ramoAtividade")
 public class RamoAtividade implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//da um valor para identificador 
 	private Long id;//Referencia a primary key no banco
+	
+	@Column(nullable = false , length = 80 )
 	private String descricao;
 	
 	

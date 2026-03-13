@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,29 +19,36 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nomefantasia")
+	//nullable não permitir nulo e 80 posições 
+	@Column(name = "nomefantasia" , nullable = false, length = 80)
 	private String nomeFantasia;
 	
-	@Column(name = "razaosocial")
+	@Column(name = "razaosocial" ,  nullable = false, length = 120)
 	private String razaoSocial;
 	
-	
+	//CNPJ obrigatório
+	@Column(name = "cnpj" , nullable = false, length = 18)
 	private String cnpj; 
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name = "datafundacao")
 	private Date dataFundacao;
 	
 	@ManyToOne
-	@JoinColumn(name="ramoatividadeid")
+	@JoinColumn(name="ramoatividadeid",nullable =false )
 	private RamoAtividade ramoAtividade;//Para um varias empresas 
 	
 	//Enum gravando String 
 	//Mapeado na entidade empresa 
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 30)
 	private TipoEmpresa tipo;
 
 	public Long getId() {
