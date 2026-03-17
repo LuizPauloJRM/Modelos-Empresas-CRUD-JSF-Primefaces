@@ -6,19 +6,20 @@
              version="2.1">
 
     <persistence-unit name="Medeiros-Software" transaction-type="RESOURCE_LOCAL">
-        <!-- Provedor JPA (Hibernate) -->
+    	<!--Lista de configs-->
+        <!-- Provedor JPA (Hibernate) Apontando um provedor cadastrar , excluir...-->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         
         <!-- Configurações de conexão com o banco de dados -->
         <properties>
             <!-- URL do banco de dados -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/medeirosSoftware"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/medeirosSoftware"/>
             
             <!-- Driver JDBC -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             
             <!-- Usuário e senha -->
-            <property name="javax.persistence.jdbc.user" value="admin"/>
+            <property name="javax.persistence.jdbc.url" value="admin"/>
             <property name="javax.persistence.jdbc.password" value="admin"/>
             
             <!-- Propriedades específicas do Hibernate -->

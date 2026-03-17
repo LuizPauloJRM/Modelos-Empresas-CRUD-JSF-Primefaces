@@ -46,7 +46,7 @@ public class Empresa implements Serializable {
 	private RamoAtividade ramoAtividade;//Para um varias empresas 
 	
 	//Enum gravando String 
-	//Mapeado na entidade empresa 
+	//Mapeando na entidade empresa 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 30)
 	private TipoEmpresa tipo;
